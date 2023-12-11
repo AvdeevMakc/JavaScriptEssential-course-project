@@ -1,0 +1,333 @@
+body {
+    font-family: Arial, Helvetica, sans-serif
+}
+
+h1 {
+    font-size: 34px
+}
+
+h3 {
+    font-size: 20px;
+}
+
+button {
+    padding: 4px;
+    border-radius: 3px;
+}
+
+.wrapper {
+    max-width: 1180px;
+    border: 1px solid red;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    position: relative;
+}
+
+/* ===============HEADER================= */
+
+.header {
+    background: rgb(0, 198, 76);
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header__title {
+    flex: 1 1 auto;
+    text-align: center;
+    color: rgb(233, 233, 233);
+    text-shadow: rgb(48, 48, 48) 1px 0 2px;
+}
+
+.header__clock {
+    text-align: right;
+    font-size: 18px;
+    text-shadow: rgb(255, 255, 255) 1px 0 1px;
+}
+
+.main {
+    background: rgb(84, 83, 126);
+    /* padding: 10px; */
+
+    display: flex;
+    flex: 1 1 auto;
+    height: 100%;
+}
+
+
+/* ===============ASIDE================= */
+
+.aside {
+    background: rgb(178, 223, 130);
+    padding: 5px;
+    width: 25%;
+}
+
+/* выпадающий ДИВ */
+.changeTask {
+    width: 250px;
+    height: 100px;
+    background: rgb(115, 142, 85);
+    position: absolute;
+    z-index: 2;
+    padding: 10px;
+    top: auto;
+    left: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    display: none;
+}
+
+.changeTask input {
+    height: 20px;
+    padding: 5px;
+    margin: 10px;
+}
+
+/*///////////////////////////////*/
+
+.to-do-list {
+    border: 1px solid #000;
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.to-do-list__title {
+    margin: 10px;
+    text-align: center;
+}
+
+.to-do-list__box {}
+
+#taskDateInput {
+    width: 90px;
+}
+
+.to-do-list__input-panel {
+    padding: 2px;
+}
+
+.to-do-list__input-panel input {
+    height: 23px;
+    margin: 3px;
+}
+
+.to-do-list__input-panel button {
+    margin: 2px 2px;
+}
+
+.to-do-list__input-panel select {
+    margin: 2px 2px;
+}
+
+select {
+    height: 23px;
+}
+
+/* добавить прокрутку */
+.to-do-list__task-list {
+    overflow: auto;
+    max-height: 250px;
+    margin-bottom: 10px;
+}
+
+.task {
+    display: flex;
+    align-items: center;
+    border: 1px solid #000;
+    margin: 3px;
+    padding: 2px;
+}
+
+.task p {
+    margin: 0px 3px;
+}
+
+.task p:first-of-type {
+    flex: 1 1 auto;
+}
+
+.task p:last-of-type {
+    font-size: 12px;
+
+}
+
+.task button {
+    margin-left: auto;
+}
+
+.completed {
+    background: rgb(0, 122, 61);
+    color: #fff;
+}
+
+.completed p {
+    text-decoration: line-through;
+}
+
+.no-time {
+    background: rgb(218, 73, 57);
+}
+
+/*----------------CONVERTER----------------*/
+
+.converter__box {
+
+    margin-bottom: 10px;
+}
+
+.converte__title {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.converter__inputBox {
+    width: 100%;
+    border: 1px solid rgb(98, 0, 255);
+    padding: 3px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+
+    display: flex;
+    justify-content: space-between;
+    background: #fff;
+}
+
+.converter__inputBox input {
+    width: 30%;
+    padding: 5px;
+    border-right: 1px solid #000;
+}
+
+.converter__inputBox select {
+    flex: 1 1 auto;
+    text-align: left;
+    font-size: 10px;
+    padding: 5px;
+    font-size: 10px;
+}
+
+.converter__inputBox option {
+    font-size: 10px;
+}
+
+.converter__info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.converter__kursNow {
+    margin-bottom: 15px;
+}
+
+.converter__result {}
+
+/* ===============ARTICLE================= */
+
+.article {
+    background: rgb(116, 196, 205);
+    padding: 20px;
+    flex: 1 1 auto;
+}
+
+/* -------------WEATER---------------- */
+
+.article__wrapper {
+    display: flex;
+    justify-content: space-around;
+}
+
+.article__weather {
+    width: 30%;
+    height: 250px;
+    background: #fff;
+    box-shadow: 0px 5px 20px rgba(8, 36, 38, 0.25);
+
+}
+
+.weather__form {
+    background: rgb(41, 70, 111);
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+.form__title {
+    padding-bottom: 10px;
+    text-align: center;
+    color: #fff;
+}
+
+.form__search {
+    display: flex;
+    flex-wrap: wrap;
+
+    /* align-items: center; */
+    /* background: #fff; */
+}
+
+.form__search input {
+    border-radius: 5px;
+    padding: 5px 3px;
+    margin-right: 5px;
+}
+
+.weather__body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.weather-box {
+    background: rgb(255, 255, 255);
+    box-shadow: 0px 5px 20px rgba(27, 108, 114, 0.25);
+    border-radius: 10%;
+    padding: 5px;
+    width: 80%;
+
+    display: flex;
+    justify-content: space-around;
+    margin: 0 auto;
+}
+
+
+
+.weather-box__info {
+    display: flex;
+    flex-direction: column;
+    row-gap: 25px;
+}
+
+.info__city {}
+
+.info__temperature {
+    font-size: 28px;
+    font-weight: 800;
+}
+
+.info__temperature sup {
+    font-size: 18px;
+}
+
+.info__around {}
+
+.weather-box__picture {}
+
+.weather-box__picture img {
+    width: 70px;
+}
+
+/* ---------NEWS-------------- */
+.article__news {
+    width: 70%;
+    /* background: #000; */
+}
+
+.footer {
+    background: rgb(50, 41, 76);
+    padding: 20px;
+}

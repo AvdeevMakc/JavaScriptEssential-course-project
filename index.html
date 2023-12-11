@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/null.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="wrapper">
+        <header class="header">
+            <div class="header__title">
+                <h1>This is your organizer</h1>
+            </div>
+            <div id="clock" class="header__clock">
+                <span class="hour">hh</span>:<span class="min">mm</span>:<span class="sec">ss</span>
+            </div>
+
+        </header>
+
+        <main class="main">
+            <aside class="aside">
+                <div class="to-do-list">
+                    <div class="to-do-list__title">
+                        <h3>Your tasks list</h3>
+                    </div>
+                    <div class="changeTask">
+                        <input type="text" id="taskNameInputNew">
+                        <input type="checkbox" id="taskCheckedNew">
+                        <input type="date" id="taskDateInputNew">
+                        <button id="addTaskBtnNew">Add task</button>
+                    </div>
+                    <div class="to-do-list__input-panel">
+                        <div class="to-do-list__box">
+                            <input type="text" id="taskNameInput">
+                            <input type="date" id="taskDateInput">
+                            <button id="addTaskBtn">Add task</button>
+                        </div>
+                        <div class="to-do-list__task-list">
+                            <p id="startMessageToDoList">No new tasks</p>
+                        </div>
+                        <select name="tasksFilter" id="tasksFilter">
+                            <option value="showAllTasks">Show all tasks</option>
+                            <option value="showNotCompletedBtn">Show not completed</option>
+                            <option value="showCompletedBtn">Show completed</option>
+                        </select>
+                        <button id="delAllTaskBtn">Del all</button>
+                    </div>
+                </div>
+
+                <div class="converter">
+                    <div class="converte__title">
+                        <h3>Converter</h3>
+                    </div>
+                    <div class="converter__box">
+                        <div class="converter__inputBox">
+                            <input type="number" value=1 id="converterInputFirst">
+                            <select id="converterSelectFirst"></select>
+                        </div>
+                        <div class="converter__inputBox">
+                            <input type="number" value=1 id="converterInputSecond">
+                            <select id="converterSelectSecond"></select>
+                        </div>
+                    </div>
+                    <div class="converter__info">
+                        <div class="converter__kursNow">
+                            <p id="showCoursNow">kurs</p>
+                        </div>
+                        <div class="converter__result">
+                            <p id="showResultNow">result</p>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+            <article class="article">article
+                <div class="article__wrapper">
+                    <div class="article__news"></div>
+                    <div class="article__weather">
+                        <div class="weather__form">
+                            <div class="form__title">Weather</div>
+                            <div class="form__search">
+                                <input type="text" id="searchCityInput">
+                                <button id="searchCityBtn">show</button>
+                            </div>
+                        </div>
+                        <div class="weather__body">
+                            <!-- <div class="weather-box">
+                                    <div class="weather-box__info">
+                                        <div class="info__city">
+                                            <h3>London</h3>
+                                        </div>
+                                        <div class="info__temperature">17 <sup>°c</sup></div>
+                                        <div class="info__around">туман</div>
+                                    </div>
+                                    <div class="weather-box__picture">
+                                        <img src="./image/weater/cloudy.png" alt="pic">
+                                    </div>
+                            </div> -->
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </main>
+        <footer class="footer">footer</footer>
+    </div>
+
+    <script src="./js/script.js"></script>
+    <script src="./js/todo.js"></script>
+    <script src="./js/convert.js"></script>
+    <script src="./js/weather.js"></script>
+</body>
+
+</html>
