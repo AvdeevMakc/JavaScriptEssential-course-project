@@ -1,43 +1,22 @@
 let keyWeater = '37c8fb4c8927f2c462daf9e2b512f194';
 
-
 let InformationAboutCity = {};
-let city = "";
 
 let searchCityInput = document.querySelector("#searchCityInput");
 let searchCityBtn = document.querySelector("#searchCityBtn");
 let weatherBody = document.querySelector(".weather__body");
 
-// window.addEventListener("DOMContentLoaded", function () {
-//     city = JSON.parse(localStorage.getItem("city"));
-//     console.log(city);
-//     weatherRequest();
+let city = localStorage.getItem("cityKey");
 
-// })
+weatherRequest();
 
-
-function createWeatherArray(array) {
-
-    removeCard();
-
-    InformationAboutCity.city = array.name;            // город
-    InformationAboutCity.temp = Math.round(array.main.temp);            // температура
-    InformationAboutCity.windSpeed = array.wind.speed;
-    InformationAboutCity.clouds = array.clouds.all;
-    InformationAboutCity.icon = array.weather[0].icon;
-    InformationAboutCity.weatherStatus = array.weather[0].main;
-    InformationAboutCity.description = array.weather[0].description;
-
-    // console.log(InformationAboutCity);
-
-    showCard();
-}
-
-searchCityBtn.addEventListener("click", weatherRequest);
+searchCityBtn.addEventListener("click", function () {
+    city = searchCityInput.value.trim();
+    weatherRequest();
+});
 
 function weatherRequest() {
 
-    city = searchCityInput.value.trim();
     let url1 = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${keyWeater}&lang=ua&units=metric`;
 
     let promise = fetch(url1);
@@ -45,7 +24,7 @@ function weatherRequest() {
         .then(response => response.json())
         .then(json => {
             createWeatherArray(json);
-            localStorage.setItem("city", JSON.stringify(city));
+            localStorage.setItem("cityKey", city);
         })
 
         .catch(error => {
@@ -79,4 +58,19 @@ function showCard() {
                     </div>
                 </div>`;
     weatherBody.insertAdjacentHTML('afterend', html);
+}
+
+function createWeatherArray(array) {
+
+    removeCard();
+
+    InformationAboutCity.city = array.name;            // город
+    InformationAboutCity.temp = Math.round(array.main.temp);            // температура
+    InformationAboutCity.windSpeed = array.wind.speed;
+    InformationAboutCity.clouds = array.clouds.all;
+    InformationAboutCity.icon = array.weather[0].icon;
+    InformationAboutCity.weatherStatus = array.weather[0].main;
+    InformationAboutCity.description = array.weather[0].description;
+
+    showCard();
 }

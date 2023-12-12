@@ -263,4 +263,4 @@ tasksFilter.addEventListener("change", function () {
             taskListView.drawCompleted();
         // console.log("show no check");
     }
-})
+});

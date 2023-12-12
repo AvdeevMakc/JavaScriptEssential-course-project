@@ -1,5 +1,4 @@
 
-
 let timerId;
 
 clockStart();
@@ -24,4 +23,58 @@ function clockStart() { // запустить часы
     timerId = setInterval(update, 1000);
     update();
 }
+
+//=============NEWS===============
+let newsKey = "82b16c40d4ed48c28b43b164287ac191";
+let newsUrl = `https://newsapi.org/v2/top-headlines?country=ua&apiKey=${newsKey}`;
+
+let pushNews = document.querySelector(".article__news");
+let newsArray = [];
+// let myAuthors = ["Ukrinform", "Еспресо", "Радіо Свобода", "Корреспондент.net", "Interfax-Ukraine", "Бізнес Цензор", "Економічна правда"];
+let promiseNews = fetch(newsUrl);
+
+promiseNews
+    .then(response => response.json())
+    .then(json => showNews(json))
+    .catch(error => console.error(error.message));
+
+function showNews(news) {
+
+    // myAuthors.forEach(author => {
+    //     newsArray = newsArray.concat(news.articles.filter(elem => elem.author == author))
+    // });
+
+    // for (let i = 0; i < news.length, i++) {
+    //     if (myAuthors.includes)
+    // }
+
+    // myAuthors.forEach(author => {
+    //     console.log(`filtered by ${author}`, news.articles.filter(elem => elem.author == author))
+    //     newsArray = newsArray.concat(news.articles.filter(elem => elem.author == author))
+    // });
+
+    news.articles.forEach(item => {
+        const htmlNews = `<div class="news__urlToImage">
+        <img src="${item.urlToImage}"
+            alt="pic">
+        <div class="news__title"><a href="${item.url}" target="_blank">
+                <h4>"${item.title}"</h4>
+            </a>
+        </div>
+        <div class="news__description">
+            <p> ${item.description}</p>
+        </div>
+        <div class="news__author">
+            <p>${item.author}</p>
+        </div>
+    </div>
+    </div>`;
+
+        pushNews.insertAdjacentHTML("beforeend", htmlNews);
+    })
+}
+
+
+
+
 
