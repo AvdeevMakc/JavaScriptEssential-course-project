@@ -35,8 +35,8 @@ let promiseNews = fetch(newsUrl);
 
 start();
 
-function start() {
-    promiseNews
+async function start() {
+    await promiseNews
         .then(response => response.json())
         .then(json => showNews(json))
         .catch(error => console.error(error.message));
