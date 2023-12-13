@@ -1,149 +1,149 @@
 body {
-    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
-}
-
-.wrapper {
-    background: rgb(242, 242, 242);
-    border: 1px solid #000;
-    max-width: 1180px;
-    margin: 0 auto;
-
-    display: flex;
-    flex-direction: column;
+    font-family: Arial, Helvetica, sans-serif
 }
 
 h1 {
-    font-size: 30px;
+    font-size: 34px
 }
 
 h3 {
     font-size: 20px;
 }
 
-/* ================HEADER================== */
-.header {
-    background: rgb(228, 228, 228);
-    padding: 20px 10px;
+button {
+    padding: 4px;
+    border-radius: 3px;
+}
+
+.wrapper {
+    max-width: 1180px;
+    border: 1px solid red;
+    /* height: 100%; */
     display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    position: relative;
+}
+
+/* ===============HEADER================= */
+
+.header {
+    background: rgb(0, 198, 76);
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
     align-items: center;
 }
 
 .header__title {
     flex: 1 1 auto;
     text-align: center;
+    color: rgb(233, 233, 233);
+    text-shadow: rgb(48, 48, 48) 1px 0 2px;
 }
 
 .header__clock {
-    width: 10%;
-    font-size: 18px;
     text-align: right;
-    margin-right: 20px;
+    font-size: 18px;
+    text-shadow: rgb(255, 255, 255) 1px 0 1px;
 }
 
-.hour {}
-
-.min {}
-
-.sec {}
-
-/* ================MAIN================== */
 .main {
+    background: rgb(84, 83, 126);
+
     display: flex;
     flex: 1 1 auto;
-    padding-top: 10px;
 }
 
-/* ================ASIDE================== */
+
+/* ===============ASIDE================= */
+
 .aside {
-    /* background: rgb(99, 83, 125); */
-    width: 25%;
-    padding-left: 5px;
-}
-
-/* -----------------TODO------------------ */
-.to-do-list {
-    border-bottom: 1px solid #000;
+    background: rgb(178, 223, 130);
     padding: 5px;
-    margin-bottom: 10px;
+    width: 300px;
+
 }
 
-.to-do-list__title {
-    margin-bottom: 10px;
-    padding-top: 10px;
-    text-align: center;
-}
-
+/* выпадающий ДИВ */
 .changeTask {
+    width: 250px;
+    height: 100px;
+    background: rgb(115, 142, 85);
+    position: absolute;
+    z-index: 2;
+    padding: 10px;
+    top: auto;
+    left: auto;
     display: flex;
+    flex-direction: column;
+    justify-content: center;
     display: none;
 }
 
 .changeTask input {
-    border: 1px solid #000;
-    margin-bottom: 10px;
-
+    height: 20px;
+    padding: 5px;
+    margin: 10px;
 }
 
-.to-do-list__input-panel {
-    display: flex;
-    flex-direction: column;
+/*///////////////////////////////*/
+
+.to-do-list {
+    border: 1px solid #000;
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.to-do-list__title {
+    margin: 10px;
+    text-align: center;
 }
 
 .to-do-list__box {}
 
-.to-do-list__box input {
-    margin-bottom: 10px;
-    padding: 3px;
+#taskDateInput {
+    /* width: 90px; */
 }
 
-#taskNameInput {
-    width: 80%;
+.to-do-list__input-panel {
+    padding: 2px;
 }
 
-.to-do-list__box button {
-    margin: 0 5px;
-    padding: 5px;
-}
-
-.to-do-list__input-footer {
-    margin-bottom: 10px;
-}
-
-.to-do-list__input-footer button {
-    margin: 0 5px;
-    padding: 5px;
-}
-
-.to-do-list__input-footer select {
+.to-do-list__input-panel input {
+    height: 23px;
     margin: 3px;
-    padding: 5px;
 }
 
-.to-do-list__input-footer button {
-    margin: 0 3px;
-    padding: 5px;
+.to-do-list__input-panel button {
+    margin: 2px 2px;
+}
+
+.to-do-list__input-panel select {
+    margin: 2px 2px;
+}
+
+select {
+    height: 23px;
 }
 
 /* добавить прокрутку */
 .to-do-list__task-list {
     overflow: auto;
     max-height: 250px;
+    margin-bottom: 10px;
 }
 
 .task {
     display: flex;
     align-items: center;
-    margin-bottom: 10px;
-    padding: 3px;
     border: 1px solid #000;
-}
-
-.task input {
     margin: 3px;
+    padding: 2px;
 }
 
 .task p {
-    margin: 0 3px;
+    margin: 0px 3px;
 }
 
 .task p:first-of-type {
@@ -152,6 +152,7 @@ h3 {
 
 .task p:last-of-type {
     font-size: 12px;
+
 }
 
 .task button {
@@ -159,7 +160,7 @@ h3 {
 }
 
 .completed {
-    background: rgb(65, 103, 84);
+    background: rgb(0, 122, 61);
     color: #fff;
 }
 
@@ -168,70 +169,77 @@ h3 {
 }
 
 .no-time {
-    background: rgb(198, 122, 114);
-    color: #fff;
+    background: rgb(218, 73, 57);
 }
 
-/* -----------------CONVERTER------------------ */
-.converter {
-    border-bottom: 1px solid #000;
-}
-
-.converte__title {
-    margin-bottom: 10px;
-    padding-top: 10px;
-    text-align: center;
-}
+/*----------------CONVERTER----------------*/
 
 .converter__box {
     margin-bottom: 10px;
 }
 
+.converte__title {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
 .converter__inputBox {
+    width: 100%;
+    border: 1px solid rgb(98, 0, 255);
+    padding: 3px;
+    border-radius: 5px;
     margin-bottom: 10px;
+
     display: flex;
-    /* justify-content: space-between; */
-    /* background: #fff; */
+    justify-content: space-between;
+    background: #fff;
+}
+
+.converter__inputBox input {
+    /* flex-basis: 50px; */
+    /* padding: 5px 0px 5px 0; */
+    border-right: 1px solid #000;
 }
 
 .converter__inputBox select {
-    margin: 3px;
+    /* flex: 1 1 auto; */
+    text-align: left;
+    font-size: 10px;
     padding: 5px;
     font-size: 10px;
 }
 
-.converter__inputBox input {
-    width: 50px;
-    margin: 3px;
-    padding: 3px;
-    border-right: 1px solid #000;
+.converter__inputBox option {
+    font-size: 10px;
 }
 
 .converter__info {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-bottom: 10px;
 }
 
 .converter__kursNow {
-    margin-bottom: 10px;
+    margin-bottom: 15px;
 }
 
 .converter__result {}
 
-/* ================ARTICLE================== */
+/* ===============ARTICLE================= */
+
 .article {
-    /* background: rgb(98, 125, 83); */
-    margin-left: 10px;
+    background: rgb(116, 196, 205);
+    padding: 20px;
     flex: 1 1 auto;
 }
 
 .article__wrapper {
     display: flex;
+    justify-content: space-around;
+
 }
 
-/* -----------------NEWS------------------ */
+/* -------------NEWS---------------- */
 
 .article__news {
     margin-right: 20px;
@@ -281,10 +289,11 @@ h3 {
 
 .news__url {}
 
-/* -----------------WEATHER------------------ */
+/* -------------WEATER---------------- */
+
+
 
 .article__weather {
-    margin: 20px 10px 0 0;
     width: 30%;
     height: 250px;
     background: #fff;
@@ -306,20 +315,13 @@ h3 {
 
 .form__search {
     display: flex;
-    flex-direction: column;
-    align-items: flex-start;
+    flex-wrap: wrap;
 }
 
 .form__search input {
     border-radius: 5px;
     padding: 5px 3px;
-    margin-bottom: 10px;
-}
-
-.form__search button {
-    /* margin: 0 3px; */
-    padding: 5px;
-    border-radius: 5px;
+    margin-right: 5px;
 }
 
 .weather__body {
@@ -340,6 +342,14 @@ h3 {
     margin: 0 auto;
 }
 
+
+
+.weather-box__info {
+    display: flex;
+    flex-direction: column;
+    row-gap: 25px;
+}
+
 .info__city {}
 
 .info__temperature {
@@ -357,9 +367,14 @@ h3 {
 
 .weather-box__picture img {}
 
-/* ================FOOTER================== */
-.footer {
-    background: rgb(228, 228, 228);
+/* ---------NEWS-------------- */
+.article__news {
+    /* width: 70%; */
+    /* background: #000; */
+}
 
+.footer {
+    background: rgb(101, 83, 153);
+    color: #fff;
     padding: 20px;
 }

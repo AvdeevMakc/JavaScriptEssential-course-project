@@ -35,6 +35,8 @@ function createValuteArray(array) {
     showCurrency(fullCurrencyArray);
 }
 
+showResult();
+
 function showCurrency(array) {
     array.forEach(val => {
         // console.log(val);
@@ -71,9 +73,9 @@ function showResult() {
 
     let result = (converterInputFirst.value * first) / second;
 
-    showResultNow.innerHTML = `Result ${result}`;
+    showResultNow.innerHTML = `Result ${result.toFixed(2)}`;
 
-    showCoursNow.innerHTML = `Exchange rate - ${first / second}`;
+    showCoursNow.innerHTML = `Exchange rate - ${(first / second).toFixed(2)}`;
 }
 
 function returnCours(text) {

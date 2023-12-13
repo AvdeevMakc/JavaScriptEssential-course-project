@@ -25,8 +25,8 @@ function clockStart() { // запустить часы
 }
 
 //=============NEWS===============
-let newsKey = "82b16c40d4ed48c28b43b164287ac191";
-let newsUrl = `https://newsapi.org/v2/top-headlines?country=ua&apiKey=${newsKey}`;
+let newsKey = "ed21b02f5e7c627d51cb5a71299ce1de";
+let newsUrl = `https://gnews.io/api/v4/top-headlines?category=general&lang=uk&apikey=${newsKey}`;
 
 let pushNews = document.querySelector(".article__news");
 let newsArray = [];
@@ -35,8 +35,8 @@ let promiseNews = fetch(newsUrl);
 
 start();
 
-async function start() {
-    await promiseNews
+function start() {
+    promiseNews
         .then(response => response.json())
         .then(json => showNews(json))
         .catch(error => console.error(error.message));
@@ -60,7 +60,7 @@ function showNews(news) {
 
     news.articles.forEach(item => {
         const htmlNews = `<div class="news__urlToImage">
-        <img src="${item.urlToImage}"
+        <img src="${item.image}"
             alt="pic">
         <div class="news__title"><a href="${item.url}" target="_blank">
                 <h4>"${item.title}"</h4>
@@ -70,7 +70,8 @@ function showNews(news) {
             <p> ${item.description}</p>
         </div>
         <div class="news__author">
-            <p>${item.author}</p>
+            <p>${item.source.name}</p>
+            <p>${item.publishedAt}</p>
         </div>
     </div>
     </div>`;
