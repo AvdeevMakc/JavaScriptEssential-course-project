@@ -374,6 +374,7 @@ select {
 }
 
 .footer {
-    background: rgb(50, 41, 76);
+    background: rgb(101, 83, 153);
+    color: #fff;
     padding: 20px;
 }
