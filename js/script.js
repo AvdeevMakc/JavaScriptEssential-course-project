@@ -33,10 +33,15 @@ let newsArray = [];
 // let myAuthors = ["Ukrinform", "Еспресо", "Радіо Свобода", "Корреспондент.net", "Interfax-Ukraine", "Бізнес Цензор", "Економічна правда"];
 let promiseNews = fetch(newsUrl);
 
-promiseNews
-    .then(response => response.json())
-    .then(json => showNews(json))
-    .catch(error => console.error(error.message));
+start();
+
+function start() {
+    promiseNews
+        .then(response => response.json())
+        .then(json => showNews(json))
+        .catch(error => console.error(error.message));
+}
+
 
 function showNews(news) {
 
