@@ -1,5 +1,6 @@
 body {
-    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+    font-family: Rubik;
+    font-size: 14px;
 }
 
 .wrapper {
@@ -14,10 +15,18 @@ body {
 
 h1 {
     font-size: 30px;
+    text-transform: uppercase;
 }
 
 h3 {
     font-size: 20px;
+}
+
+button {
+    margin: 0 5px;
+    padding: 5px 10px;
+    border: 1px solid #000;
+    border-radius: 7px;
 }
 
 /* ================HEADER================== */
@@ -56,14 +65,14 @@ h3 {
 /* ================ASIDE================== */
 .aside {
     /* background: rgb(99, 83, 125); */
-    width: 25%;
+    max-width: 300px;
     padding-left: 5px;
 }
 
 /* -----------------TODO------------------ */
 .to-do-list {
     /* border-bottom: 1px solid #000; */
-    box-shadow: 0px 5px 10px rgba(8, 36, 38, 0.45);
+    box-shadow: 0px 2px 5px rgba(8, 36, 38, 0.45);
     padding: 5px;
     margin-bottom: 20px;
 }
@@ -75,14 +84,21 @@ h3 {
 }
 
 .changeTask {
+    position: fixed;
+    top: 150px;
+    background: rgb(204, 204, 204);
     display: flex;
+    flex-wrap: wrap;
+    /* flex-direction: column; */
+    width: 300px;
+    height: 120px;
+    padding: 20px;
     display: none;
 }
 
 .changeTask input {
-    border: 1px solid #000;
     margin-bottom: 10px;
-
+    padding: 3px;
 }
 
 .to-do-list__input-panel {
@@ -101,27 +117,14 @@ h3 {
     width: 80%;
 }
 
-.to-do-list__box button {
-    margin: 0 5px;
-    padding: 5px;
-}
-
 .to-do-list__input-footer {
     margin-bottom: 10px;
 }
 
-.to-do-list__input-footer button {
-    margin: 0 5px;
-    padding: 5px;
-}
+.to-do-list__input-footer button {}
 
 .to-do-list__input-footer select {
     margin: 3px;
-    padding: 5px;
-}
-
-.to-do-list__input-footer button {
-    margin: 0 3px;
     padding: 5px;
 }
 
@@ -159,6 +162,10 @@ h3 {
     margin-left: auto;
 }
 
+.task img {
+    cursor: pointer;
+}
+
 .completed {
     background: rgb(65, 103, 84);
     color: #fff;
@@ -176,7 +183,7 @@ h3 {
 /* -----------------CONVERTER------------------ */
 .converter {
     /* border-bottom: 1px solid #000; */
-    box-shadow: 0px 5px 10px rgba(8, 36, 38, 0.45);
+    background: linear-gradient(to bottom, #e5e5e5 0%, #fcfcfc 54%);/ box-shadow: 0px 2px 5px rgba(8, 36, 38, 0.45);
 }
 
 .converte__title {
@@ -192,12 +199,10 @@ h3 {
 .converter__inputBox {
     margin-bottom: 10px;
     display: flex;
-    /* justify-content: space-between; */
-    /* background: #fff; */
 }
 
 .converter__inputBox select {
-    margin: 3px;
+    margin: 3px 10px 3px 0;
     padding: 5px;
     font-size: 10px;
 }
@@ -206,7 +211,6 @@ h3 {
     width: 50px;
     margin: 3px;
     padding: 3px;
-    border-right: 1px solid #000;
 }
 
 .converter__info {
@@ -241,13 +245,18 @@ h3 {
     margin-right: 20px;
     display: flex;
     flex-direction: column;
+
 }
 
 .news {}
 
 .news__urlToImage {
-    margin-bottom: 20px;
-    border-bottom: 1px solid #000;
+    padding: 5px;
+    margin-bottom: 10px;
+    background: linear-gradient(to bottom, #e5e5e5 0%, #fcfcfc 100%);
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    /* background: rgb(240, 240, 240); */
+    box-shadow: 0px 2px 3px rgba(8, 30, 30, 0.3);
 }
 
 .news__urlToImage img {
@@ -257,8 +266,6 @@ h3 {
 
     margin: 7px 7px 7px 0;
     /* Відступи навколо картинки */
-
-
 }
 
 .news__title {}
@@ -269,17 +276,30 @@ h3 {
     text-decoration: underline;
 }
 
+.news__description {
+    flex: 1 1 auto;
+    margin-bottom: 5px;
+}
+
 .news__description p {
+    text-align: justify;
+    padding: 0 5px;
     font-size: 14px;
     line-height: 18px;
 }
 
 
-.news__author {}
+.news__author {
+    display: flex;
+    justify-content: end;
+    padding-right: 10px;
+    font-size: 10px;
+    font-style: italic;
+}
 
 .news__author p {
     font-size: 10px;
-    text-align: right;
+    margin-left: 20px;
 }
 
 
@@ -364,6 +384,17 @@ h3 {
 /* ================FOOTER================== */
 .footer {
     background: rgb(228, 228, 228);
-
     padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer__text {
+    margin-right: 10px;
+    font-size: 12px;
+}
+
+.footer img {
+    width: 13px;
 }

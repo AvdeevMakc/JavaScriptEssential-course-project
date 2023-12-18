@@ -70,7 +70,9 @@ function showNews(news) {
             <p> ${item.description}</p>
         </div>
         <div class="news__author">
+        <a href="${item.source.url}" target=_blank">
             <p>${item.source.name}</p>
+            </a>
             <p>${item.publishedAt}</p>
         </div>
     </div>
