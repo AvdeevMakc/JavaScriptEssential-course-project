@@ -1,1 +1,2 @@
-[Uploading Untitled-1.pdf…]()
+
+![Uploading Untitled-1.jpg…]()
