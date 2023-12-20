@@ -21,6 +21,7 @@
             </div>
             <div id="clock" class="header__clock">
                 <span class="hour">hh</span>:<span class="min">mm</span>:<span class="sec">ss</span>
+                <p id="dateToday"></p>
             </div>
 
         </header>
@@ -33,13 +34,13 @@
                     </div>
                     <div class="changeTask">
                         <input type="text" id="taskNameInputNew">
-                        <input type="checkbox" id="taskCheckedNew">
+                        <input type="checkbox" id="taskCheckedNew" hidden="none">
                         <input type="date" id="taskDateInputNew">
                         <button id="addTaskBtnNew">Add task</button>
                     </div>
                     <div class="to-do-list__input-panel">
                         <div class="to-do-list__box">
-                            <input type="text" id="taskNameInput">
+                            <input type="text" id="taskNameInput" placeholder="Enter your task">
                             <input type="date" id="taskDateInput">
                             <button id="addTaskBtn">Add task</button>
                         </div>
@@ -93,7 +94,7 @@
                         <div class="weather__form">
                             <div class="form__title">Weather</div>
                             <div class="form__search">
-                                <input type="text" id="searchCityInput">
+                                <input type="text" id="searchCityInput" placeholder="Enter your sity">
                                 <button id="searchCityBtn">show</button>
                             </div>
                         </div>

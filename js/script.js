@@ -17,6 +17,11 @@ function update() {
     let seconds = date.getSeconds();
     if (seconds < 10) seconds = '0' + seconds;
     clock.children[2].innerHTML = seconds;
+
+    let today = date.toDateString();
+    document.querySelector("#dateToday").innerHTML = today;
+    // clock.children[3].innerHTML = today;
+    // console.log(today)
 }
 
 function clockStart() { // запустить часы
